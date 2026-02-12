@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Nueva Mini Página</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/create" method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Título de la página</label>
+                                <input type="text" class="form-control" id="title" name="title" required placeholder="Ej: Mi Cumpleaños">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="author" class="form-label">Tu nombre</label>
+                                <input type="text" class="form-control" id="author" name="author" required placeholder="Ej: Juan Pérez">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensaje o Contenido</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Escribe aquí tu mensaje..."></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="theme" class="form-label">Elige un estilo visual</label>
+                                <select class="form-select" id="theme" name="theme">
+                                    <option value="bg-white text-dark">Clásico (Blanco)</option>
+                                    <option value="bg-dark text-white">Modo Oscuro</option>
+                                    <option value="bg-primary text-white">Azul Profesional</option>
+                                    <option value="bg-danger text-white">Rojo Intenso</option>
+                                    <option value="bg-success text-white">Verde Naturaleza</option>
+                                    <option value="bg-warning text-dark">Amarillo Energía</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Imagen (Opcional)</label>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/*">
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-success btn-lg">Generar QR</button>
+                                <a href="/" class="btn btn-secondary">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
